@@ -1,5 +1,3 @@
-package com.jemstep.zioquickstart
-
 import cats.implicits._
 import scalaz.zio.console.putStrLn
 import scalaz.zio.{App, Task, ZIO}
