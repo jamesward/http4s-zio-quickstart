@@ -31,3 +31,13 @@ libraryDependencies ++= Seq(
 addCompilerPlugin("org.spire-math" %% "kind-projector"     % "0.9.6")
 
 addCompilerPlugin("com.olegpy"     %% "better-monadic-for" % "0.2.4")
+
+enablePlugins(JavaAppPackaging, DockerPlugin)
+
+dockerPermissionStrategy := com.typesafe.sbt.packager.docker.DockerPermissionStrategy.Run
+
+dockerRepository := sys.props.get("docker.repo")
+
+dockerUsername := sys.props.get("docker.username")
+
+packageName := sys.props.get("docker.packagename").getOrElse(name.value)
